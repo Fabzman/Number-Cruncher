@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour {
 
-    public EnemySpawner enemyCount;
 
 	// Use this for initialization
 	void Start ()
