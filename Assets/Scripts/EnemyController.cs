@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour {
 
+    public EnemySpawner enemyCount;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -21,6 +23,7 @@ public class EnemyController : MonoBehaviour {
         if (other.tag == "Player")
         {
             Destroy(gameObject);
+            EnemySpawner.instance.enemyCount--;
         }
     }
 }
