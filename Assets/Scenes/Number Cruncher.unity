@@ -2886,7 +2886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyCount: 0
   spawnTimer: 0
-  enemy: {fileID: 1865505964721828, guid: 2cbabed0b732104419dd117068046447, type: 2}
+  enemy: {fileID: 1991061687391060, guid: 2cbabed0b732104419dd117068046447, type: 2}
   enemySpawner: {fileID: 758024482}
 --- !u!65 &758024484
 BoxCollider:
@@ -4713,6 +4713,18 @@ Prefab:
     - target: {fileID: 4106193307351098, guid: b70e387b905b7204da419b845b9771cb, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4652714053810734, guid: b70e387b905b7204da419b845b9771cb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854669329907008, guid: b70e387b905b7204da419b845b9771cb, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1565405515778444, guid: b70e387b905b7204da419b845b9771cb, type: 2}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b70e387b905b7204da419b845b9771cb, type: 2}

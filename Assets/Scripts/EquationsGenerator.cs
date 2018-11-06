@@ -22,6 +22,8 @@ public class EquationsGenerator : MonoBehaviour {
             GenerateAddition();
         if (Input.GetKeyDown(KeyCode.D))
             GenerateDivision();
+        if (Input.GetKeyDown(KeyCode.S))
+            GenerateSubtraction();
 
 
         if (Input.GetKeyDown(KeyCode.R))

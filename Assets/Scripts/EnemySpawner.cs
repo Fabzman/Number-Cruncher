@@ -19,7 +19,7 @@ public class EnemySpawner : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        spawnTimer = 10f;
+        spawnTimer = 5f;
         enemyCount = 0;
 	}
 	
