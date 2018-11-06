@@ -4170,7 +4170,7 @@ MonoBehaviour:
   numberOne: 0
   numberTwo: 0
   correctAnswer: 0
-  dummyAnswers: 00000000000000000000000000000000
+  dummyAnswers: 00000000
 --- !u!4 &1234534360
 Transform:
   m_ObjectHideFlags: 0
