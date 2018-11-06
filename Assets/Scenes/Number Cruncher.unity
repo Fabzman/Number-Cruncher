@@ -4726,6 +4726,10 @@ Prefab:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4106193307351098, guid: b70e387b905b7204da419b845b9771cb, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b70e387b905b7204da419b845b9771cb, type: 2}
   m_IsPrefabAsset: 0

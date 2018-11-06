@@ -21,6 +21,30 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            //anim.SetTrigger("Turn Left");
+            //transform.Rotate(0f, 0f, 0f);
+            transform.Rotate(0f, 0f, 180f, Space.World);
+        }
+
+        //if (Input.GetKeyUp(KeyCode.A))
+        //{
+        //    return;
+        //}
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            //anim.SetTrigger("Turn Right");
+            transform.Rotate(0f, 0f, 180f);
+        }
+
+        ////if (Input.GetKeyUp(KeyCode.D))
+        ////{
+        ////    //anim.SetTrigger("Idle");
+        ////    return;
+        ////}
+
         rb.velocity = new Vector3(Input.GetAxisRaw("Horizontal") * Speed, rb.velocity.y, Input.GetAxisRaw("Vertical") * Speed);
         //movement = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
         //moveSpeed = movement * Speed;
