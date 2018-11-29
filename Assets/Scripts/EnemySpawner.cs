@@ -10,6 +10,7 @@ public class EnemySpawner : MonoBehaviour {
     public float spawnTimer;
     public GameObject enemy;
     public Transform enemySpawner;
+    private Transform currentEnemy;
 
     private void Awake()
     {
@@ -19,7 +20,7 @@ public class EnemySpawner : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        spawnTimer = 5f;
+        spawnTimer = 3f;
         enemyCount = 0;
 	}
 	
@@ -28,14 +29,9 @@ public class EnemySpawner : MonoBehaviour {
     {
         spawnTimer -= Time.deltaTime;
 
-        if (enemyCount >= 1)
+        if (spawnTimer <= 0 && !currentEnemy)
         {
-            return;
-        }
-
-        if (spawnTimer <= 0 && enemyCount <1)
-        {
-            Instantiate(enemy, transform.position, transform.rotation);
+            currentEnemy = Instantiate(enemy, transform.position, transform.rotation).transform;
             enemyCount++;
             spawnTimer = 10f;
         }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class EnemyController : MonoBehaviour {
 
@@ -15,6 +16,9 @@ public class EnemyController : MonoBehaviour {
 
     public int correctAnswer;
 
+    public Vector3 offsetFromPlayer;
+    public float getToPlayer;
+
 
 
     // Use this for initialization
@@ -24,23 +28,24 @@ public class EnemyController : MonoBehaviour {
         GenerateRandomEquation();
         player = GameObject.Find("Player").transform;
         enemySlow = false;
+        transform.DOMove(player.transform.position + offsetFromPlayer, getToPlayer).SetEase(Ease.OutQuad);
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        float step = enemySpeed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, player.position, step);
+        //float step = enemySpeed * Time.deltaTime;
+        //transform.position = Vector3.MoveTowards(transform.position, player.position, step);
 
-        if (enemySlow == true)
-        {
-            enemySpeed = enemySpeed = 0.5f;
-        }
+        //if (enemySlow == true)
+        //{
+        //    enemySpeed = enemySpeed = 0.5f;
+        //}
 
-        else if (enemySlow == false)
-        {
-            enemySpeed = enemySpeed = 1f;
-        }
+        //else if (enemySlow == false)
+        //{
+        //    enemySpeed = enemySpeed = 1f;
+        //}
     }
 
     private void OnTriggerEnter(Collider other)
