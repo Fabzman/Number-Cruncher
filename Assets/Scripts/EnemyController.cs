@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour {
 
     //private PlayerController _player;
     public float enemySpeed = 1f;
-    public Transform player;
+    public PlayerController player;
     public bool enemySlow;
 
     public int correctAnswer;
@@ -26,7 +26,7 @@ public class EnemyController : MonoBehaviour {
     {
         //_player = GameObject.Find("Player").GetComponent<PlayerController>();
         GenerateRandomEquation();
-        player = GameObject.Find("Player").transform;
+        player = GameObject.Find("Player").GetComponent<PlayerController>();
         enemySlow = false;
         transform.DOMove(player.transform.position + offsetFromPlayer, getToPlayer).SetEase(Ease.OutQuad);
     }
@@ -62,11 +62,13 @@ public class EnemyController : MonoBehaviour {
         {
             enemySlow = false;
         }
-        //if (other.tag == "Fist")
-        //{
-        //    Destroy(gameObject);
-        //    EnemySpawner.instance.enemyCount--;
-        //}
+        if (other.tag == "Fist")
+        {
+            if (player.enteredNumber == correctAnswer)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 
     void GenerateRandomEquation()

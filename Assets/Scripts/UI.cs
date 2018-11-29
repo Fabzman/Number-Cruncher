@@ -7,6 +7,7 @@ public class UI : MonoBehaviour {
 
     public static UI instance;
     public TextMeshProUGUI equation;
+    public TextMeshProUGUI currentNumber;
 
     private void Awake()
     {
@@ -18,4 +19,8 @@ public class UI : MonoBehaviour {
         this.equation.text = equation;
     }
 
+    public void SetCurrentNumber(string number)
+    {
+        currentNumber.text = "Current Number: " + number;
+    }
 }
