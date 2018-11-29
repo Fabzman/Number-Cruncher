@@ -52,7 +52,7 @@ public class EquationsGenerator : MonoBehaviour {
 
         Debug.Log(numberOne + " x " + numberTwo + " = " + correctAnswer);
 
-        GenerateDummyAnswers(); 
+        //GenerateDummyAnswers(); 
     }
 
     void GenerateAddition()
@@ -63,7 +63,7 @@ public class EquationsGenerator : MonoBehaviour {
 
         Debug.Log(numberOne + " + " + numberTwo + " = " + correctAnswer);
 
-        GenerateDummyAnswers();
+        //GenerateDummyAnswers();
     }
 
     void GenerateSubtraction()
@@ -74,7 +74,7 @@ public class EquationsGenerator : MonoBehaviour {
 
         Debug.Log(numberOne + " - " + numberTwo + " = " + correctAnswer);
 
-        GenerateDummyAnswers();
+        //GenerateDummyAnswers();
     }
 
     void GenerateDivision()
@@ -84,7 +84,7 @@ public class EquationsGenerator : MonoBehaviour {
         correctAnswer = numberOne / numberTwo;
         correctAnswer = Mathf.RoundToInt(correctAnswer);
         Debug.Log(numberOne + " / " + numberTwo + " = " + correctAnswer);
-        GenerateDummyAnswers();
+        //GenerateDummyAnswers();
     }
 
     /// <summary>
@@ -109,18 +109,19 @@ public class EquationsGenerator : MonoBehaviour {
     /// <summary>
     /// This will generate a set of dummy answers
     /// </summary>
-    private void GenerateDummyAnswers()
-    {
-        for (int i = 0; i < dummyAnswers.Count; i++)
-        {
-            int dummy;
-            do
-            {
-                dummy = Random.Range(correctAnswer - 10, correctAnswer + 10);
-            }
-            while (dummy == correctAnswer || dummyAnswers.Contains(dummy));
-            dummyAnswers[i] = dummy;
-            Debug.Log("Dummy answer: " + dummyAnswers[i]);
-        }
-    }
+    /// Not necessary for current gameplay
+    //private void GenerateDummyAnswers()
+    //{
+    //    for (int i = 0; i < dummyAnswers.Count; i++)
+    //    {
+    //        int dummy;
+    //        do
+    //        {
+    //            dummy = Random.Range(correctAnswer - 10, correctAnswer + 10);
+    //        }
+    //        while (dummy == correctAnswer || dummyAnswers.Contains(dummy));
+    //        dummyAnswers[i] = dummy;
+    //        Debug.Log("Dummy answer: " + dummyAnswers[i]);
+    //    }
+    //}
 }

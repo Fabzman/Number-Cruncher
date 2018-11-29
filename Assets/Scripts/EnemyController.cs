@@ -4,16 +4,24 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour {
 
+    public enum Difficulty { EASY, MEDIUM, HARD }
+
+    public Difficulty difficulty;
+
     //private PlayerController _player;
     public float enemySpeed = 1f;
     public Transform player;
     public bool enemySlow;
+
+    public int correctAnswer;
+
 
 
     // Use this for initialization
     void Start ()
     {
         //_player = GameObject.Find("Player").GetComponent<PlayerController>();
+        GenerateRandomEquation();
         player = GameObject.Find("Player").transform;
         enemySlow = false;
     }
@@ -54,5 +62,73 @@ public class EnemyController : MonoBehaviour {
         //    Destroy(gameObject);
         //    EnemySpawner.instance.enemyCount--;
         //}
-    } 
+    }
+
+    void GenerateRandomEquation()
+    {
+        int rnd = Random.Range(1, 100);
+        if (rnd <= 35)
+            GenerateAddition();
+        else if (rnd <= 60)
+            GenerateSubtraction();
+        else if (rnd <= 90)
+            GenerateMultiplication();
+        else
+            GenerateDivision();
+    }
+
+    void GenerateMultiplication()
+    {
+        int numberOne = GetRandomNumbers();
+        int numberTwo = GetRandomNumbers();
+        correctAnswer = numberOne * numberTwo;
+
+        UI.instance.SetEquation(numberOne + " * " + numberTwo);
+    }
+
+    void GenerateAddition()
+    {
+        int numberOne = GetRandomNumbers();
+        int numberTwo = GetRandomNumbers();
+        correctAnswer = numberOne + numberTwo;
+
+        UI.instance.SetEquation(numberOne + " + " + numberTwo);
+    }
+
+    void GenerateSubtraction()
+    {
+        int numberOne = GetRandomNumbers();
+        int numberTwo = GetRandomNumbers();
+        correctAnswer = numberOne - numberTwo;
+
+        UI.instance.SetEquation(numberOne + " - " + numberTwo);
+    }
+
+    void GenerateDivision()
+    {
+        int numberOne = GetRandomNumbers();
+        int numberTwo = GetRandomNumbers();
+        correctAnswer = numberOne / numberTwo;
+
+        UI.instance.SetEquation(numberOne + " / " + numberTwo);
+    }
+
+    /// <summary>
+    /// Gets a random number based on our difficulty
+    /// </summary>
+    /// <returns>A random number</returns>
+    int GetRandomNumbers()
+    {
+        switch (difficulty)
+        {
+            case Difficulty.EASY:
+                return (Random.Range(1, 10));
+            case Difficulty.MEDIUM:
+                return (Random.Range(1, 20));
+            case Difficulty.HARD:
+                return (Random.Range(1, 100));
+            default:
+                return (Random.Range(1, 10));
+        }
+    }
 }
